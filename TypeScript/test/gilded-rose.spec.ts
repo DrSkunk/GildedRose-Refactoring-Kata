@@ -4,6 +4,11 @@ import { Item, GildedRose } from "../app/gilded-rose";
 describe("Gilded Rose", function () {
   describe("updateQuality", function () {
     describe("Normal items", function () {
+      it("Nothing should happen when there are no items", function () {
+        const gildedRose = new GildedRose();
+        const items = gildedRose.updateQuality();
+        expect(items.length).to.equal(0);
+      });
       it("Should lower the sellIn value by one after a day", function () {
         const gildedRose = new GildedRose([
           new Item("+5 Dexterity Vest", 10, 20),
