@@ -17,15 +17,15 @@ export class GildedRose {
     this.items = items;
   }
 
-  private static minQuality = 0;
-  private static maxQuality = 50;
+  private static minimumQuality = 0;
+  private static maximumQuality = 50;
 
   private static limitQuality(newQuality): number {
     // The Quality of an item is never negative
     // The Quality of an item is never more than 50
     return Math.max(
-      GildedRose.minQuality,
-      Math.min(newQuality, GildedRose.maxQuality)
+      GildedRose.minimumQuality,
+      Math.min(newQuality, GildedRose.maximumQuality)
     );
   }
 
@@ -37,8 +37,8 @@ export class GildedRose {
 
   static handleAgedBrie(item: Item): Item {
     item.quality = Math.max(
-      GildedRose.minQuality,
-      Math.min(item.quality + 1, GildedRose.maxQuality)
+      GildedRose.minimumQuality,
+      Math.min(item.quality + 1, GildedRose.maximumQuality)
     );
     return item;
   }
