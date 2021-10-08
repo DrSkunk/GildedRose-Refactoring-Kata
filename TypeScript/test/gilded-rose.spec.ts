@@ -14,6 +14,11 @@ describe("Gilded Rose", function () {
 
         expect(items[0].sellIn).to.equal(9);
         expect(items[1].sellIn).to.equal(4);
+
+        const items2 = gildedRose.updateQuality();
+
+        expect(items2[0].sellIn).to.equal(8);
+        expect(items2[1].sellIn).to.equal(3);
       });
 
       it("SellIn can be negative", function () {
